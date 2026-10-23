@@ -1,8 +1,15 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Immediate Navy Blue Dark Mode initialization on every fresh visit -->
+    <script>
+      try {
+        localStorage.removeItem('theme');
+      } catch (e) {}
+      document.documentElement.classList.add('dark');
+    </script>
     <title>Abdullah Iqbal | Computer Science &amp; Web / IT Operations Portfolio</title>
     <meta
       name="description"

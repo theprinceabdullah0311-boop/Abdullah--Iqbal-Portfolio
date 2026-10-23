@@ -18,14 +18,8 @@ import { Footer } from './components/Footer';
 import { CvModal } from './components/CvModal';
 
 export default function App() {
-  // Default to light theme on first visit as explicitly requested
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      if (saved) return saved === 'dark';
-    }
-    return false;
-  });
+  // Always default to Navy Blue Dark Mode on every fresh visit
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   const [cvModalOpen, setCvModalOpen] = useState(false);
 
@@ -33,10 +27,8 @@ export default function App() {
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
 
